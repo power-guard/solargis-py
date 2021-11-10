@@ -81,3 +81,7 @@ To get coverage stats:
 coverage run -m unittest
 coverage report
 ```
+
+## References
+
+[Solargis API User Guide](https://wiki.solargis.com/display/public/Solargis+API+User+Guide)
