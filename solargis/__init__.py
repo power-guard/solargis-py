@@ -1,0 +1,1 @@
+from solargis.client import SolarGisClient
