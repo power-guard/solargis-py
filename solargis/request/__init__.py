@@ -1,6 +1,6 @@
 from solargis.request.datadeliveryrequest import DataDeliveryRequest
 from solargis.request.geometry import Geometry
-from solargis.request.inverter import Inverter
+from solargis.request.inverter import Inverter, EfficiencyType
 from solargis.request.losses import AcLosses, DcLosses, Losses
 from solargis.request.module import ModuleType, Module
 from solargis.request.processing import Processing, Summarization, Key, TimestampType
