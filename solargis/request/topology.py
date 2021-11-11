@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 from solargis.abstractelement import AbstractElement
 from solargis.validator import Validator
 
-class XsiType(Enum):
+class TopologyXsiType(Enum):
     TopologySimple = 'pv:TopologySimple'
     TopologyRow = 'pv:TopologyRow'
     GeometryFixedOneAngle = 'pv:GeometryFixedOneAngle'
@@ -17,10 +17,10 @@ class MagnitudeType(Enum):
     UNPROPORTIONAL_3 = 'UNPROPORTIONAL_3'
 
 class Topology(AbstractElement):
-    def __init__(self, xsi_type: XsiType, relative_spacing: float,
+    def __init__(self, xsi_type: TopologyXsiType, relative_spacing: float,
         magnitude_of_loss: MagnitudeType = None):
 
-        Validator.value_in_enum(xsi_type, XsiType)
+        Validator.value_in_enum(xsi_type, TopologyXsiType)
         if magnitude_of_loss is not None:
             Validator.value_in_enum(magnitude_of_loss, MagnitudeType)
 
