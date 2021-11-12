@@ -1,0 +1,32 @@
+# .coveragerc to control coverage.py
+[run]
+
+# Calculate branch coverage as well as line coverage
+branch = True
+
+# Only calculate coverage for files in these directories
+source = solargis
+
+[report]
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    # Have to re-enable the standard pragma
+    pragma: no cover
+
+    # Don't complain about missing debug-only code:
+    def __repr__
+    if self\.debug
+
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError
+    raise NotImplementedError
+
+    # Don't complain if non-runnable code isn't run:
+    if 0:
+    if __name__ == .__main__.:
+
+# Don’t include empty files (those that have 0 statements) in the report.
+skip_empty = True
+
+# ignore source code that can’t be found, emitting a warning instead of an exception.
+ignore_errors = True

@@ -64,6 +64,9 @@ class Validator():
     def gmt_timezone(value):
         msg = 'Timezone must be expressed as "GMT[+-][number of hours zero padded]"'
 
+        if type(value) != str:
+            raise ValidationException(msg)
+
         if len(value) != 6:
             raise ValidationException(msg)
 

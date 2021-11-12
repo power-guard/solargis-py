@@ -6,7 +6,7 @@ from solargis.validator import Validator
 
 class Terrain(AbstractElement):
     def __init__(self, elevation: float = None, azimuth: float = None,
-        tilt: float = None, prefix='geo'):
+        tilt: float = None):
 
         if azimuth is not None:
             Validator.value_in_range(azimuth, 0, 180, 'azimuth')
@@ -18,7 +18,7 @@ class Terrain(AbstractElement):
         self.tilt = tilt
 
         self.element_name = 'terrain'
-        self.prefix = prefix
+        self.prefix = 'geo'
 
     def to_element(self):
         if self.elevation is None and \

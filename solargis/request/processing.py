@@ -70,7 +70,7 @@ class TimestampType(Enum):
 class Processing(AbstractElement):
     def __init__(self, summarization: Summarization, key: str,
         time_zone: str = None, timestamp_type: TimestampType = None,
-        terrain_shading: bool = False, prefix=''):
+        terrain_shading: bool = False):
 
         Validator.value_in_enum(summarization, Summarization)
         Validator.str_not_none_or_blank(key, 'key')
@@ -88,7 +88,7 @@ class Processing(AbstractElement):
         self.terrain_shading = terrain_shading
 
         self.element_name = 'processing'
-        self.prefix = prefix
+        self.prefix = ''
 
     def to_element(self) -> ET.Element:
         attributes = dict()

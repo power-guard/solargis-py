@@ -5,6 +5,10 @@ import xml.etree.ElementTree as ET
 
 class GeometryXsiType(Enum):
     GeometryFixedOneAngle = 'pv:GeometryFixedOneAngle'
+    GeometryOneAxisHorizontalNS = 'pv:GeometryOneAxisHorizontalNS'
+    GeometryOneAxisInclinedNS = 'pv:GeometryOneAxisInclinedNS'
+    GeometryOneAxisVertical = 'pv:GeometryOneAxisVertical'
+    GeometryTwoAxisAstronomical = 'pv:GeometryTwoAxisAstronomical'
 
 
 class Geometry(AbstractElement):

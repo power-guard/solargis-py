@@ -7,8 +7,7 @@ from solargis.validator import Validator
 class Site(AbstractElement):
     def __init__(self, id: str, latitude: float, longitude: float,
         name: str = None, geometry=None, system=None,
-        terrain=None, horizon: str = None,
-        prefix: str = None):
+        terrain=None, horizon: str = None):
 
         Validator.str_not_none_or_blank(id, 'id')
         Validator.value_in_range(latitude, -90, 90, 'latitude')
@@ -24,7 +23,7 @@ class Site(AbstractElement):
         self.horizon = horizon
 
         self.element_name = 'site'
-        self.prefix = prefix
+        self.prefix = ''
 
     def to_element(self):
         attributes = dict()
