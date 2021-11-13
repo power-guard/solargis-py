@@ -19,7 +19,8 @@ class Module(AbstractElement):
                  degradation: float = None,
                  degradation_first_year: float = None,
                  nominal_operating_cell_temp: float = None,
-                 pmax_coeff: float = None):
+                 pmax_coeff: float = None,
+                 surface_reflectance: float = None):
 
         Validator.value_in_enum(module_type, ModuleType)
 
@@ -27,16 +28,18 @@ class Module(AbstractElement):
             Validator.value_in_range(degradation, 0, 100, 'degradation')
         if degradation_first_year is not None:
             Validator.value_in_range(degradation_first_year, 0, 100, 'degradation first year')
+        if surface_reflectance is not None:
+            Validator.greater_than(surface_reflectance, -1, 'surface reflectance')
 
         self.module_type = module_type
-        self.degradation= degradation
-        self.degradation_first_year= degradation_first_year
-        self.nominal_operating_cell_temp= nominal_operating_cell_temp
-        self.pmax_coeff= pmax_coeff
+        self.degradation = degradation
+        self.degradation_first_year = degradation_first_year
+        self.nominal_operating_cell_temp = nominal_operating_cell_temp
+        self.pmax_coeff = pmax_coeff
+        self.surface_reflectance = surface_reflectance
 
         self.element_name = 'module'
         self.prefix = 'pv'
-
 
     def to_element(self):
         attributes = dict()
@@ -59,5 +62,9 @@ class Module(AbstractElement):
         if self.pmax_coeff is not None:
             pmax_coeff = ET.SubElement(module, 'pv:PmaxCoeff')
             pmax_coeff.text = str(self.pmax_coeff)
+
+        if self.surface_reflectance is not None:
+            surface_reflectance = ET.SubElement(module, 'pv:surfaceReflectance')
+            surface_reflectance.text = str(self.surface_reflectance)
 
         return module

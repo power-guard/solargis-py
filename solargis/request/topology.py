@@ -12,9 +12,9 @@ class TopologyXsiType(Enum):
 
 class MagnitudeType(Enum):
     PROPORTIONAL = 'PROPORTIONAL'
-    UNPROPORTIONAL_1 = 'UNPROPORTIONAL_1'
-    UNPROPORTIONAL_2 = 'UNPROPORTIONAL_2'
-    UNPROPORTIONAL_3 = 'UNPROPORTIONAL_3'
+    UNPROPORTIONAL1 = 'UNPROPORTIONAL1'
+    UNPROPORTIONAL2 = 'UNPROPORTIONAL2'
+    UNPROPORTIONAL3 = 'UNPROPORTIONAL3'
 
 class Topology(AbstractElement):
     def __init__(self, xsi_type: TopologyXsiType, relative_spacing: float,
@@ -30,7 +30,6 @@ class Topology(AbstractElement):
 
         self.prefix = 'pv'
         self.element_name = 'topology'
-
 
     def to_element(self):
         attributes = dict()

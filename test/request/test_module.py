@@ -39,3 +39,15 @@ class TestModule(unittest.TestCase):
         )
         actual = module.to_xml()
         self.assertEqual(actual, expected)
+
+
+    def test_module_surface_reflectance(self):
+        module = Module(ModuleType.CSI, surface_reflectance=0.16)
+
+        expected = (
+            '<pv:module type="CSI">'
+            '<pv:surfaceReflectance>0.16</pv:surfaceReflectance>'
+            '</pv:module>'
+        )
+        actual = module.to_xml()
+        self.assertEqual(actual, expected)
