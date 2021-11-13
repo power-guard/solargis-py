@@ -2,6 +2,7 @@ import datetime as dt
 
 from solargis.exception import ValidationException
 
+
 class Validator():
 
     @staticmethod

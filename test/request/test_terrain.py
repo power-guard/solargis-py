@@ -2,6 +2,7 @@ import unittest
 
 from solargis.request import Terrain
 
+
 class TestLosses(unittest.TestCase):
 
 

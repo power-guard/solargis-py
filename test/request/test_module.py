@@ -2,6 +2,7 @@ import unittest
 
 from solargis.request import Module, ModuleType
 
+
 class TestModule(unittest.TestCase):
 
     def test_module_element(self):

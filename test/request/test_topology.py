@@ -1,6 +1,7 @@
 import unittest
 
-from solargis.request import Topology, TopologyXsiType, MagnitudeType
+from solargis.request import MagnitudeType, Topology, TopologyXsiType
+
 
 class TestLosses(unittest.TestCase):
 

@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 
 from solargis.abstractelement import AbstractElement
 
+
 class DcLosses(AbstractElement):
     '''	Estimation of power losses on the DC side. If the element is missing,
     the specific DC losses are estimated by default as:

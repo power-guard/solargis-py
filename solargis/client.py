@@ -7,6 +7,7 @@ from solargis.exception import RequestException, ResponseParsingError
 from solargis.request import DataDeliveryRequest
 from solargis.response import DataDeliveryResponse
 
+
 class SolarGisClient():
 
     TIMEOUT = (3, 3.04)

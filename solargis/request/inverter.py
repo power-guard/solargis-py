@@ -1,5 +1,5 @@
-from enum import Enum
 import xml.etree.ElementTree as ET
+from enum import Enum
 
 from solargis.abstractelement import AbstractElement
 from solargis.validator import Validator

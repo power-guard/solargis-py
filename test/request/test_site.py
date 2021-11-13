@@ -2,6 +2,7 @@ import unittest
 
 from solargis.request import Site
 
+
 class TestLosses(unittest.TestCase):
 
 

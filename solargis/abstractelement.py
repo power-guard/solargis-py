@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 
+
 class AbstractElement():
     def get_element_name(self) -> str:
         if self.prefix:

@@ -2,6 +2,7 @@ import unittest
 
 from solargis.request import AcLosses, DcLosses, Losses
 
+
 class TestLosses(unittest.TestCase):
 
     def test_losses_element_empty(self):

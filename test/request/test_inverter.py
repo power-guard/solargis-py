@@ -2,6 +2,7 @@ import unittest
 
 from solargis.request import Inverter
 
+
 class TestInverter(unittest.TestCase):
 
     def test_inverter_element_none(self):

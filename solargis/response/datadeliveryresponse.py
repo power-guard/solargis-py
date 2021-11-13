@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 
 from solargis.exception import ResponseParsingError, ValidationException
 
+
 class DataDeliveryResponse():
 
     XML_NAMESPACES = {

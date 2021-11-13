@@ -1,10 +1,10 @@
-import unittest
-from unittest.mock import Mock
 import datetime as dt
-
+import unittest
 import xml.etree.ElementTree as ET
+from unittest.mock import Mock
 
 from solargis.request import DataDeliveryRequest
+
 
 class TestDataDeliveryRequest(unittest.TestCase):
     def test_happy_path(self):

@@ -42,6 +42,7 @@ import xml.etree.ElementTree as ET
 from solargis.abstractelement import AbstractElement
 from solargis.validator import Validator
 
+
 class DataDeliveryRequest(AbstractElement):
     DATE_FORMAT = '%Y-%m-%d'
 

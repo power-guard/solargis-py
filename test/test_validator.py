@@ -1,9 +1,10 @@
+import datetime as dt
 import unittest
 from enum import Enum
-import datetime as dt
 
 from solargis.exception import ValidationException
 from solargis.validator import Validator
+
 
 class SampleEnum(Enum):
     A = 0

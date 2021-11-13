@@ -2,6 +2,7 @@ import unittest
 
 from solargis.request import Geometry, GeometryXsiType
 
+
 class TestGeometry(unittest.TestCase):
 
     def test_geometry_element(self):

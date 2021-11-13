@@ -1,8 +1,9 @@
 import datetime as dt
 import unittest
 
-from solargis.request import Inverter, Losses, AcLosses, \
-     DcLosses, Module, ModuleType, System, InstallationType
+from solargis.request import (AcLosses, DcLosses, InstallationType, Inverter,
+                              Losses, Module, ModuleType, System)
+
 
 class TestSystem(unittest.TestCase):
 

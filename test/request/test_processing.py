@@ -1,7 +1,8 @@
 import unittest
 
 from solargis.exception import ValidationException
-from solargis.request import Processing, Summarization, Key, TimestampType
+from solargis.request import Key, Processing, Summarization, TimestampType
+
 
 class TestProcessing(unittest.TestCase):
 
