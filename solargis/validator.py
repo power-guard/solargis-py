@@ -87,3 +87,14 @@ class Validator():
 
         if not (0 < hours < 24):
             raise ValidationException(msg)
+
+    @staticmethod
+    def coerce_to_integer(value, param_name):
+        val = None
+        try:
+            val = int(value)
+        except Exception:
+            pass
+        if val == value:
+            return val
+        raise ValidationException(f'{param_name} ({value}) must be an integer')

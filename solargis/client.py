@@ -22,13 +22,12 @@ class SolarGisClient():
 
         try:
             response = requests.post(uri, data=data, headers=headers, timeout=self.TIMEOUT)
-            response.raise_for_status()
+            if response.status_code < 200 or response.status_code > 299:
+                raise RequestException(f'Request failed with message: {response.text}')
 
             return DataDeliveryResponse.from_xml(response.text)
 
         except ResponseParsingError as e:
-            raise
-        except requests.exceptions.HTTPError as e:
             raise
         except Exception as e:
             raise RequestException('An unknown error occurred') from e

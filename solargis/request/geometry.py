@@ -19,11 +19,13 @@ class Geometry(AbstractElement):
     GTI/PVOUT is requested, flat-lying PV panels are considered
     (GTI=GHI)
     """
-    def __init__(self, xsi_type: GeometryXsiType, azimuth: float, tilt: float):
+    def __init__(self, xsi_type: GeometryXsiType, azimuth: int, tilt: int):
         self.prefix = 'pv'
         self.element_name = 'geometry'
 
         Validator.value_in_enum(xsi_type, GeometryXsiType)
+        azimuth = Validator.coerce_to_integer(azimuth, 'geometry azimuth')
+        tilt = Validator.coerce_to_integer(tilt, 'geometry tilt')
 
         self.xsi_type = xsi_type
         self.azimuth = azimuth

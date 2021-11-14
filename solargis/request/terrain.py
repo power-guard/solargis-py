@@ -5,14 +5,18 @@ from solargis.validator import Validator
 
 
 class Terrain(AbstractElement):
-    def __init__(self, elevation: float = None, azimuth: float = None,
-        tilt: float = None):
+    def __init__(self, elevation: int = None, azimuth: int = None,
+        tilt: int = None):
+
+        elevation = Validator.coerce_to_integer(elevation, 'terrain elevation')
 
         if azimuth is not None:
+            azimuth = Validator.coerce_to_integer(azimuth, 'terrain azimuth')
             # 0 is north. 180 is south
-            Validator.value_in_range(azimuth, 0, 360, 'azimuth')
+            Validator.value_in_range(azimuth, 0, 360, 'terrain azimuth')
         if tilt is not None:
-            Validator.value_in_range(tilt, 0, 90, 'tilt')
+            tilt = Validator.coerce_to_integer(tilt, 'terrain tilt')
+            Validator.value_in_range(tilt, 0, 90, 'terrain tilt')
 
         self.elevation = elevation
         self.azimuth = azimuth

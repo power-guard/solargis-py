@@ -84,9 +84,9 @@ class Losses(AbstractElement):
             return None
 
         losses = ET.Element(self.get_element_name())
-        if ac is not None:
-            losses.append(ac)
         if dc is not None:
             losses.append(dc)
+        if ac is not None:
+            losses.append(ac)
 
         return losses

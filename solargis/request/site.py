@@ -36,6 +36,15 @@ class Site(AbstractElement):
 
         element = ET.Element(self.get_element_name(), attrib=attributes)
 
+        if self.terrain is not None:
+            terrain = self.terrain.to_element()
+            if terrain is not None:
+                element.append(terrain)
+
+        if self.horizon:
+            horizon = ET.SubElement(element, 'geo:horizon')
+            horizon.text = self.horizon
+
         if self.geometry is not None:
             geometry = self.geometry.to_element()
             if geometry is not None:
@@ -45,14 +54,5 @@ class Site(AbstractElement):
             system = self.system.to_element()
             if system is not None:
                 element.append(system)
-
-        if self.terrain is not None:
-            terrain = self.terrain.to_element()
-            if terrain is not None:
-                element.append(terrain)
-
-        if self.horizon:
-            horizon = ET.SubElement(element, 'geo:horizon')
-            horizon.text = self.horizon
 
         return element
