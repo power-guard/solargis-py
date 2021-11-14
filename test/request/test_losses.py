@@ -19,7 +19,7 @@ class TestLosses(unittest.TestCase):
 
         ac_txt = '<pv:acLosses transformer="1.0" cables="2.0" />'
         dc_txt = '<pv:dcLosses snowPollution="2.5" cables="2.0" mismatch="1.0" />'
-        expected = '<pv:losses>' + ac_txt + dc_txt + '</pv:losses>'
+        expected = '<pv:losses>' + dc_txt + ac_txt + '</pv:losses>'
         actual = losses.to_xml()
         self.assertEqual(actual, expected)
 
@@ -30,7 +30,7 @@ class TestLosses(unittest.TestCase):
 
         ac_txt = '<pv:acLosses transformer="1.0" cables="2.0" />'
         dc_txt = '<pv:dcLosses snowPollution="2.5" cables="2.0" mismatch="1.0" />'
-        expected = '<pv:losses>' + ac_txt + dc_txt + '</pv:losses>'
+        expected = '<pv:losses>' + dc_txt + ac_txt + '</pv:losses>'
         actual = losses.to_xml()
         self.assertEqual(actual, expected)
 

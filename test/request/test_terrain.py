@@ -12,13 +12,13 @@ class TestLosses(unittest.TestCase):
         self.assertIsNone(element)
 
     def test_terrain_element_with_elevation(self):
-        terrain = Terrain(elevation=5.4)
-        expected = '<geo:terrain elevation="5.4" />'
+        terrain = Terrain(elevation=5)
+        expected = '<geo:terrain elevation="5" />'
         actual = terrain.to_xml()
         self.assertEqual(actual, expected)
 
     def test_terrain_element_with_all(self):
         terrain = Terrain(elevation=1.0, azimuth=90, tilt=45.0)
-        expected = '<geo:terrain elevation="1.0" azimuth="90" tilt="45.0" />'
+        expected = '<geo:terrain elevation="1" azimuth="90" tilt="45" />'
         actual = terrain.to_xml()
         self.assertEqual(actual, expected)

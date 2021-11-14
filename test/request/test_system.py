@@ -25,8 +25,8 @@ class TestSystem(unittest.TestCase):
             '<pv:efficiency xsi:type="pv:EfficiencyConstant" percent="98" />'
             '</pv:inverter>'
             '<pv:losses>'
-            '<pv:acLosses transformer="1.5" cables="1" />'
             '<pv:dcLosses snowPollution="2.5" cables="4" mismatch="1" />'
+            '<pv:acLosses transformer="1.5" cables="1" />'
             '</pv:losses>'
             '</pv:system>'
         )
