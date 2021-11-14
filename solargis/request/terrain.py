@@ -9,7 +9,8 @@ class Terrain(AbstractElement):
         tilt: float = None):
 
         if azimuth is not None:
-            Validator.value_in_range(azimuth, 0, 180, 'azimuth')
+            # 0 is north. 180 is south
+            Validator.value_in_range(azimuth, 0, 360, 'azimuth')
         if tilt is not None:
             Validator.value_in_range(tilt, 0, 90, 'tilt')
 
