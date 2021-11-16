@@ -25,7 +25,6 @@ class Geometry(AbstractElement):
 
         Validator.value_in_enum(xsi_type, GeometryXsiType)
         azimuth = Validator.coerce_to_integer(azimuth, 'geometry azimuth')
-        tilt = Validator.coerce_to_integer(tilt, 'geometry tilt')
 
         self.xsi_type = xsi_type
         self.azimuth = azimuth
